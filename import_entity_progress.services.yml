@@ -1,0 +1,6 @@
+services:
+  import_entity_progress.event_subscriber:
+    class: Drupal\import_entity_progress\EventSubscriber\ImportEntityProgressSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }

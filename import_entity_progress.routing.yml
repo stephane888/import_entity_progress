@@ -1,0 +1,23 @@
+import_entity_progress.ui_api:
+  path: '/import-entity-progress/api'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\import_entity_progress\Controller\ImportEntityProgressController::build'
+  requirements:
+    _permission: 'access content'
+
+import_entity_progress.deleteterms:
+  path: '/import-entity-progress/deleteterms'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\import_entity_progress\Controller\ImportEntityProgressController::deleteTerms'
+  requirements:
+    _permission: 'access content'
+
+import_entity_progress.settings_form:
+  path: '/admin/config/system/import-entity-progress'
+  defaults:
+    _title: 'import entity progress settings'
+    _form: 'Drupal\import_entity_progress\Form\SettingsForm'
+  requirements:
+    _permission: 'administer import_entity_progress configuration'

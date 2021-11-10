@@ -1,0 +1,11 @@
+# Custom module library for general purposes.
+ui_api:
+  js:
+    files/ImportDatas.umd.min.js: {}
+  css:
+    component:
+      files/ImportDatas.css: {}
+  dependencies:
+    - core/drupalSettings
+    - wb_universe/vue_js
+

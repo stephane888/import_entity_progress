@@ -1,0 +1,4 @@
+administer import_entity_progress configuration:
+  title: 'Administer import_entity_progress configuration'
+  description: 'Optional description.'
+  restrict access: true

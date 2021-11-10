@@ -1,0 +1,6 @@
+import_entity_progress.settings_form:
+  title: import entity progress
+  description: Configure import entity progress.
+  parent: system.admin_config_system
+  route_name: import_entity_progress.settings_form
+  weight: 10
