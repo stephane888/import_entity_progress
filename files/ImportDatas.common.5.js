@@ -1,9 +1,161 @@
 ((typeof self !== 'undefined' ? self : this)["webpackJsonpImportDatas"] = (typeof self !== 'undefined' ? self : this)["webpackJsonpImportDatas"] || []).push([[5],{
 
+/***/ "0988":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ba97");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("019c");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("a60e");
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  url_session: "/session/token",
+  token: null,
+
+  /**
+   * Permet d'obtenir le token.
+   */
+  getToken: function getToken() {
+    var _this = this;
+
+    return new Promise(function (resolv) {
+      if (_this.token) resolv(_this.token);
+      console.log(" Config :: ", _config__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].BaseUrl(), "\n this.url_session :: ", _this.url_session);
+      _config__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].get(_config__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].BaseUrl() + _this.url_session).then(function (resp) {
+        _this.token = resp.data;
+        resolv(resp.data);
+      });
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "20f1":
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "8b82":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _siteweb_AppVuejs_import_datas_drupal_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("1da1");
+/* harmony import */ var _siteweb_AppVuejs_import_datas_drupal_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("5530");
+/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("2207");
+/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _session__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("0988");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("a60e");
+
+
+
+
+
+
+var utilities = Object(_siteweb_AppVuejs_import_datas_drupal_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(Object(_siteweb_AppVuejs_import_datas_drupal_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])({}, _config__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"]), {}, {
+  /**
+   * configCustom[{name:"",value:""}]
+   */
+  dPost: function dPost(url, datas) {
+    var _arguments = arguments,
+        _this = this;
+
+    return Object(_siteweb_AppVuejs_import_datas_drupal_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var configCustom, Token, configs;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              configCustom = _arguments.length > 2 && _arguments[2] !== undefined ? _arguments[2] : null;
+              _context.next = 3;
+              return _session__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].getToken();
+
+            case 3:
+              Token = _context.sent;
+              configs = {
+                "X-CSRF-Token": Token,
+                "Content-Type": "application/json"
+              };
+
+              if (configCustom) {
+                configs = _this.mergeHeaders(configCustom, configs);
+              }
+
+              return _context.abrupt("return", _this.post(url, datas, {
+                headers: configs
+              }));
+
+            case 7:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+
+  /**
+   * Get datas;
+   */
+  dGet: function dGet(url) {
+    var _arguments2 = arguments,
+        _this2 = this;
+
+    return Object(_siteweb_AppVuejs_import_datas_drupal_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      var configCustom, Token, configs;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              configCustom = _arguments2.length > 1 && _arguments2[1] !== undefined ? _arguments2[1] : null;
+              _context2.next = 3;
+              return _session__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].getToken();
+
+            case 3:
+              Token = _context2.sent;
+              configs = {
+                "X-CSRF-Token": Token,
+                "Content-Type": "application/json"
+              };
+
+              if (configCustom) {
+                configs = _this2.mergeHeaders(configCustom, configs);
+              }
+
+              return _context2.abrupt("return", _this2.get(url, {
+                headers: configs
+              }));
+
+            case 7:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  },
+
+  /**
+   *
+   */
+  mergeHeaders: function mergeHeaders(configCustom, configs) {
+    if (configCustom) {
+      for (var i in configCustom) {
+        configs[i] = configCustom[i];
+      }
+    }
+
+    return configs;
+  }
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (utilities);
 
 /***/ }),
 
@@ -18,38 +170,17 @@
 
 /***/ }),
 
-/***/ "ac30":
+/***/ "a60e":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7395cb18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DeleteTerms/DeleteTerms.vue?vue&type=template&id=000475a4&
-var DeleteTermsvue_type_template_id_000475a4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"d-flex align-items-center pl-5 p-3 mb-2 border"},[_c('b-button',{staticClass:"mx-4",attrs:{"variant":"danger","disabled":_vm.isBusy},on:{"click":_vm.getVocabulary}},[_vm._v(" Suppresion des termes ")]),_c('b-form-group',{staticClass:"align-items-center"},[_c('b-form-checkbox',{attrs:{"name":"checkbox-1","value":true,"unchecked-value":false},model:{value:(_vm.recursive),callback:function ($$v) {_vm.recursive=$$v},expression:"recursive"}},[_vm._v(" Recursive ... ")])],1),_c('b-form-group',{staticClass:"align-items-center",attrs:{"label":"Nombre de termes à supprimer"}},[_c('b-form-input',{attrs:{"type":"number"},model:{value:(_vm.NumberTermDelete),callback:function ($$v) {_vm.NumberTermDelete=$$v},expression:"NumberTermDelete"}})],1),(_vm.recursive)?_c('div',{staticClass:"mx-5"},[_c('b-icon',{attrs:{"icon":"three-dots","animation":"cylon","font-scale":"2"}})],1):_vm._e()],1),_vm._l((_vm.delteTermes),function(rows,i){return _c('div',{key:i},[_vm._v(" "+_vm._s(rows.time / 1000)+" s "),_c('hr'),_vm._l((rows.terms),function(row,k){return _c('span',{key:k},[_vm._v(" "+_vm._s(row.text)+" | ")])})],2)})],2)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/DeleteTerms/DeleteTerms.vue?vue&type=template&id=000475a4&
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-collections.for-each.js
-var web_dom_collections_for_each = __webpack_require__("159b");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.splice.js
-var es_array_splice = __webpack_require__("a434");
-
-// EXTERNAL MODULE: ../drupal-vuejs/node_modules/core-js/modules/es.object.to-string.js
-var es_object_to_string = __webpack_require__("ba97");
-
-// EXTERNAL MODULE: ../drupal-vuejs/node_modules/core-js/modules/es.promise.js
-var es_promise = __webpack_require__("019c");
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js + 1 modules
 var objectSpread2 = __webpack_require__("5530");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7395cb18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!../wbuutilities/src/Buttons/ButtonSave.vue?vue&type=template&id=29246a2e&scoped=true&lang=html&
-var ButtonSavevue_type_template_id_29246a2e_scoped_true_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('b-button',{attrs:{"variant":"outline-success","size":"sm"},on:{"click":_vm.onSubmit}},[_c('span',[_vm._v(_vm._s(_vm.texte))]),(_vm.running)?_c('b-icon',{staticClass:"ml-2",attrs:{"icon":"arrow-clockwise","animation":"spin-pulse"}}):_vm._e()],1)],1)}
-var ButtonSavevue_type_template_id_29246a2e_scoped_true_lang_html_staticRenderFns = []
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('b-button',{attrs:{"variant":"outline-success","size":"sm"},on:{"click":_vm.onSubmit}},[_c('span',[_vm._v(_vm._s(_vm.texte))]),(_vm.running)?_c('b-icon',{staticClass:"ml-2",attrs:{"icon":"arrow-clockwise","animation":"spin-pulse"}}):_vm._e()],1)],1)}
+var staticRenderFns = []
 
 
 // CONCATENATED MODULE: ../wbuutilities/src/Buttons/ButtonSave.vue?vue&type=template&id=29246a2e&scoped=true&lang=html&
@@ -116,8 +247,8 @@ var componentNormalizer = __webpack_require__("2877");
 
 var component = Object(componentNormalizer["a" /* default */])(
   Buttons_ButtonSavevue_type_script_lang_js_,
-  ButtonSavevue_type_template_id_29246a2e_scoped_true_lang_html_render,
-  ButtonSavevue_type_template_id_29246a2e_scoped_true_lang_html_staticRenderFns,
+  render,
+  staticRenderFns,
   false,
   null,
   "29246a2e",
@@ -212,10 +343,10 @@ var es_string_includes = __webpack_require__("869e");
 var es_string_trim = __webpack_require__("82e4");
 
 // EXTERNAL MODULE: ../wbuutilities/node_modules/core-js/modules/es.object.to-string.js
-var modules_es_object_to_string = __webpack_require__("c26d");
+var es_object_to_string = __webpack_require__("c26d");
 
 // EXTERNAL MODULE: ../wbuutilities/node_modules/core-js/modules/es.promise.js
-var modules_es_promise = __webpack_require__("a9ce");
+var es_promise = __webpack_require__("a9ce");
 
 // EXTERNAL MODULE: ../wbuutilities/node_modules/core-js/modules/es.regexp.exec.js
 var es_regexp_exec = __webpack_require__("9a6c");
@@ -564,150 +695,50 @@ var config = Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /
   }
 });
 
-/* harmony default export */ var src_config = (config);
-// CONCATENATED MODULE: ../drupal-vuejs/src/App/session.js
+/* harmony default export */ var src_config = __webpack_exports__["a"] = (config);
+
+/***/ }),
+
+/***/ "ac30":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7395cb18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DeleteTerms/DeleteTerms.vue?vue&type=template&id=4def942b&
+var DeleteTermsvue_type_template_id_4def942b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"d-flex align-items-center pl-5 p-3 mb-2 border"},[_c('b-button',{staticClass:"mx-4",attrs:{"variant":"danger","disabled":_vm.isBusy},on:{"click":_vm.getVocabulary}},[_vm._v(" Suppresion des termes ")]),_c('b-form-group',{staticClass:"align-items-center"},[_c('b-form-checkbox',{attrs:{"name":"checkbox-1","value":true,"unchecked-value":false},model:{value:(_vm.recursive),callback:function ($$v) {_vm.recursive=$$v},expression:"recursive"}},[_vm._v(" Recursive ... ")])],1),_c('b-form-group',{staticClass:"align-items-center",attrs:{"label":"Nombre de termes à supprimer"}},[_c('b-form-input',{attrs:{"type":"number"},model:{value:(_vm.NumberTermDelete),callback:function ($$v) {_vm.NumberTermDelete=$$v},expression:"NumberTermDelete"}})],1),(_vm.recursive)?_c('div',{staticClass:"mx-5"},[_c('b-icon',{attrs:{"icon":"three-dots","animation":"cylon","font-scale":"2"}})],1):_vm._e()],1),_vm._l((_vm.delteTermes),function(rows,i){return _c('div',{key:i},[_vm._v(" "+_vm._s(rows.time / 1000)+" s "),_c('hr'),_vm._l((rows.terms),function(row,k){return _c('span',{key:k},[_vm._v(" "+_vm._s(row.text)+" | ")])})],2)})],2)}
+var staticRenderFns = []
 
 
+// CONCATENATED MODULE: ./src/components/DeleteTerms/DeleteTerms.vue?vue&type=template&id=4def942b&
 
-/* harmony default export */ var session = ({
-  url_session: "/session/token",
-  token: null,
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-collections.for-each.js
+var web_dom_collections_for_each = __webpack_require__("159b");
 
-  /**
-   * Permet d'obtenir le token.
-   */
-  getToken: function getToken() {
-    var _this = this;
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.splice.js
+var es_array_splice = __webpack_require__("a434");
 
-    return new Promise(function (resolv) {
-      if (_this.token) resolv(_this.token);
-      console.log(" Config :: ", src_config.BaseUrl(), "\n this.url_session :: ", _this.url_session);
-      src_config.get(src_config.BaseUrl() + _this.url_session).then(function (resp) {
-        _this.token = resp.data;
-        resolv(resp.data);
-      });
-    });
-  }
-});
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__("1da1");
+// EXTERNAL MODULE: ../drupal-vuejs/src/App/session.js
+var session = __webpack_require__("0988");
 
-// EXTERNAL MODULE: ../drupal-vuejs/node_modules/regenerator-runtime/runtime.js
-var runtime = __webpack_require__("2207");
+// EXTERNAL MODULE: ../drupal-vuejs/src/App/utilities.js
+var utilities = __webpack_require__("8b82");
 
-// CONCATENATED MODULE: ../drupal-vuejs/src/App/utilities.js
-
-
-
-
-
-
-var utilities = Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, src_config), {}, {
-  /**
-   * configCustom[{name:"",value:""}]
-   */
-  dPost: function dPost(url, datas) {
-    var _arguments = arguments,
-        _this = this;
-
-    return Object(asyncToGenerator["a" /* default */])( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      var configCustom, Token, configs;
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              configCustom = _arguments.length > 2 && _arguments[2] !== undefined ? _arguments[2] : null;
-              _context.next = 3;
-              return session.getToken();
-
-            case 3:
-              Token = _context.sent;
-              configs = {
-                "X-CSRF-Token": Token,
-                "Content-Type": "application/json"
-              };
-
-              if (configCustom) {
-                configs = _this.mergeHeaders(configCustom, configs);
-              }
-
-              return _context.abrupt("return", _this.post(url, datas, {
-                headers: configs
-              }));
-
-            case 7:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }))();
-  },
-
-  /**
-   * Get datas;
-   */
-  dGet: function dGet(url) {
-    var _arguments2 = arguments,
-        _this2 = this;
-
-    return Object(asyncToGenerator["a" /* default */])( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-      var configCustom, Token, configs;
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              configCustom = _arguments2.length > 1 && _arguments2[1] !== undefined ? _arguments2[1] : null;
-              _context2.next = 3;
-              return session.getToken();
-
-            case 3:
-              Token = _context2.sent;
-              configs = {
-                "X-CSRF-Token": Token,
-                "Content-Type": "application/json"
-              };
-
-              if (configCustom) {
-                configs = _this2.mergeHeaders(configCustom, configs);
-              }
-
-              return _context2.abrupt("return", _this2.get(url, {
-                headers: configs
-              }));
-
-            case 7:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }))();
-  },
-
-  /**
-   *
-   */
-  mergeHeaders: function mergeHeaders(configCustom, configs) {
-    if (configCustom) {
-      for (var i in configCustom) {
-        configs[i] = configCustom[i];
-      }
-    }
-
-    return configs;
-  }
-});
-
-/* harmony default export */ var App_utilities = (utilities);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
 var classCallCheck = __webpack_require__("d4ec");
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
 var createClass = __webpack_require__("bee2");
 
+// EXTERNAL MODULE: ../drupal-vuejs/node_modules/core-js/modules/es.object.to-string.js
+var es_object_to_string = __webpack_require__("ba97");
+
+// EXTERNAL MODULE: ../drupal-vuejs/node_modules/core-js/modules/es.promise.js
+var es_promise = __webpack_require__("019c");
+
 // EXTERNAL MODULE: ../drupal-vuejs/node_modules/core-js/modules/es.function.name.js
-var modules_es_function_name = __webpack_require__("8b32");
+var es_function_name = __webpack_require__("8b32");
 
 // CONCATENATED MODULE: ../drupal-vuejs/src/App/jsonApi/Confs.js
 /* harmony default export */ var Confs = ({
@@ -719,6 +750,9 @@ var modules_es_function_name = __webpack_require__("8b32");
 });
 // EXTERNAL MODULE: ../drupal-vuejs/node_modules/core-js/modules/es.array.concat.js
 var es_array_concat = __webpack_require__("d701");
+
+// EXTERNAL MODULE: ../drupal-vuejs/src/config.js + 13 modules
+var config = __webpack_require__("a60e");
 
 // CONCATENATED MODULE: ../drupal-vuejs/src/App/jsonApi/buildFilter.js
 
@@ -738,7 +772,7 @@ var buildFilter_filters = /*#__PURE__*/function () {
   Object(createClass["a" /* default */])(filters, [{
     key: "addFilter",
     value: function addFilter(fieldName, operator, value) {
-      var key = "fil-" + src_config.getRandomIntInclusive();
+      var key = "fil-" + config["a" /* default */].getRandomIntInclusive();
       this.addParam(key, "path", fieldName);
       this.addParam(key, "operator", operator);
       this.addParam(key, "value", value);
@@ -789,7 +823,7 @@ var termsTaxo_termsTaxo = /*#__PURE__*/function () {
       var _this = this;
 
       return new Promise(function (resolv) {
-        App_utilities.get(_this.url, Confs.headers).then(function (resp) {
+        utilities["a" /* default */].get(_this.url, Confs.headers).then(function (resp) {
           _this.terms = resp.data;
           resolv(resp.data);
         });
@@ -807,7 +841,7 @@ var termsTaxo_termsTaxo = /*#__PURE__*/function () {
       var filter = new buildFilter();
       filter.addFilter("name", "CONTAINS", search);
       return new Promise(function (resolv) {
-        App_utilities.get(_this2.url + "?" + filter.query, Confs.headers).then(function (resp) {
+        utilities["a" /* default */].get(_this2.url + "?" + filter.query, Confs.headers).then(function (resp) {
           _this2.terms = resp.data;
           resolv(resp.data);
         });
@@ -838,12 +872,15 @@ var termsTaxo_termsTaxo = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ var jsonApi_termsTaxo = (termsTaxo_termsTaxo);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js + 1 modules
+var objectSpread2 = __webpack_require__("5530");
+
 // CONCATENATED MODULE: ../drupal-vuejs/src/App/users/user.js
 
 
 
 
-/* harmony default export */ var user = (Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, App_utilities), {}, {
+/* harmony default export */ var user = (Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, utilities["a" /* default */]), {}, {
   getCurrentUser: function getCurrentUser() {
     var _this = this;
 
@@ -863,6 +900,12 @@ var termsTaxo_termsTaxo = /*#__PURE__*/function () {
     });
   }
 }));
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__("1da1");
+
+// EXTERNAL MODULE: ../drupal-vuejs/node_modules/regenerator-runtime/runtime.js
+var runtime = __webpack_require__("2207");
+
 // EXTERNAL MODULE: ../drupal-vuejs/node_modules/core-js/modules/web.dom-collections.for-each.js
 var modules_web_dom_collections_for_each = __webpack_require__("bdca");
 
@@ -1036,7 +1079,7 @@ var formatFieldsBootstrap_formatField = /*#__PURE__*/function () {
       }
 
       url += "/" + this.bundle;
-      return App_utilities.get(url);
+      return utilities["a" /* default */].get(url);
     }
     /**
      * - Cet object permet de rendre les elements de l'object ecoutable.
@@ -1282,7 +1325,7 @@ function loadScript(src) {
       // this.IsBusy();
       // this.getFields();
       return new Promise(function (resolv, reject) {
-        App_utilities.post("/login-rx-vuejs/google-check", google.userAccess).then(function (resp) {
+        utilities["a" /* default */].post("/login-rx-vuejs/google-check", google.userAccess).then(function (resp) {
           _this2.isBusy = false;
           _this2.alertDisplay = true;
           _this2.alertType = "alert-success";
@@ -1330,6 +1373,9 @@ function loadScript(src) {
 // EXTERNAL MODULE: ../drupal-vuejs/src/App/components/logingoogle.vue?vue&type=style&index=0&lang=scss&
 var logingooglevue_type_style_index_0_lang_scss_ = __webpack_require__("a4d5");
 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
 // CONCATENATED MODULE: ../drupal-vuejs/src/App/components/logingoogle.vue
 
 
@@ -1339,7 +1385,7 @@ var logingooglevue_type_style_index_0_lang_scss_ = __webpack_require__("a4d5");
 
 /* normalize component */
 
-var logingoogle_component = Object(componentNormalizer["a" /* default */])(
+var component = Object(componentNormalizer["a" /* default */])(
   components_logingooglevue_type_script_lang_js_,
   logingooglevue_type_template_id_44fdffac_render,
   logingooglevue_type_template_id_44fdffac_staticRenderFns,
@@ -1350,7 +1396,7 @@ var logingoogle_component = Object(componentNormalizer["a" /* default */])(
   
 )
 
-/* harmony default export */ var logingoogle = (logingoogle_component.exports);
+/* harmony default export */ var logingoogle = (component.exports);
 // CONCATENATED MODULE: ../drupal-vuejs/index.js
 
 
@@ -1403,7 +1449,7 @@ var logingoogle_component = Object(componentNormalizer["a" /* default */])(
 //
 
 
-App_utilities.TestDomain = "http://v2lesroisdelareno.kksa";
+utilities["a" /* default */].TestDomain = "http://v2lesroisdelareno.kksa";
 /* harmony default export */ var DeleteTermsvue_type_script_lang_js_ = ({
   name: "DeleteTerms",
   data: function data() {
@@ -1432,7 +1478,7 @@ App_utilities.TestDomain = "http://v2lesroisdelareno.kksa";
           t.forEach(function (term) {
             if (tids.length < _this.NumberTermDelete) tids.push(term.value);
           });
-          App_utilities.post("/import-entity-progress/deleteterms", {
+          utilities["a" /* default */].post("/import-entity-progress/deleteterms", {
             vid: vid,
             tids: tids
           }).then(function () {
@@ -1444,11 +1490,12 @@ App_utilities.TestDomain = "http://v2lesroisdelareno.kksa";
               time: time
             });
 
+            _this.isBusy = false;
+
             if (_this.recursive) {
-              _this.isBusy = false;
               setTimeout(function () {
                 DeleteProgess();
-              }, 10000);
+              }, 40000);
             }
           });
         });
@@ -1470,7 +1517,7 @@ App_utilities.TestDomain = "http://v2lesroisdelareno.kksa";
 
 var DeleteTerms_component = Object(componentNormalizer["a" /* default */])(
   DeleteTerms_DeleteTermsvue_type_script_lang_js_,
-  DeleteTermsvue_type_template_id_000475a4_render,
+  DeleteTermsvue_type_template_id_4def942b_render,
   staticRenderFns,
   false,
   null,

@@ -35,14 +35,14 @@ module.exports =
 /******/
 /******/ 	// object to store loaded CSS chunks
 /******/ 	var installedCssChunks = {
-/******/ 		1: 0
+/******/ 		2: 0
 /******/ 	}
 /******/
 /******/ 	// object to store loaded and loading chunks
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		1: 0
+/******/ 		2: 0
 /******/ 	};
 /******/
 /******/
@@ -83,11 +83,11 @@ module.exports =
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"4":1,"5":1};
+/******/ 		var cssChunks = {"5":1,"6":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "css/" + ({}[chunkId]||chunkId) + "." + {"0":"31d6cfe0","2":"31d6cfe0","3":"31d6cfe0","4":"f77c3f8f","5":"6ef2343b","6":"31d6cfe0","7":"31d6cfe0"}[chunkId] + ".css";
+/******/ 				var href = "css/" + ({}[chunkId]||chunkId) + "." + {"0":"31d6cfe0","1":"31d6cfe0","3":"31d6cfe0","4":"31d6cfe0","5":"6ef2343b","6":"b9ca1866","7":"31d6cfe0","8":"31d6cfe0"}[chunkId] + ".css";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
@@ -15309,7 +15309,7 @@ var routes = [{
   component: function component() {
     return new Promise(function (resolv) {
       var callback = function callback() {
-        resolv(Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, "e489")));
+        resolv(Promise.all(/* import() */[__webpack_require__.e(1), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, "e489")));
       }; // On verifie la presence de jQuery et de window.Papa;
 
 
@@ -15327,7 +15327,7 @@ var routes = [{
   name: "suppresion de terme",
   props: true,
   component: function component() {
-    return Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, "ac30"));
+    return Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(4), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, "ac30"));
   }
 }, {
   path: "/*",
@@ -15382,7 +15382,7 @@ function loadstyle(src) {
 }
 
 var App = function App() {
-  return Promise.all(/* import() */[__webpack_require__.e(3), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, "3dfd")).then(function (component) {
+  return Promise.all(/* import() */[__webpack_require__.e(3), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, "3dfd")).then(function (component) {
     return new Promise(function (resolv) {
       var callback = function callback() {
         resolv(component);

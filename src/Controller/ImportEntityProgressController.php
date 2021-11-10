@@ -46,6 +46,25 @@ class ImportEntityProgressController extends ControllerBase {
     return $this->reponse($body, 200, 'Supresion des terms ok');
   }
 
+  public function createterms(Request $Request) {
+    $body = JSON::decode($Request->getContent());
+    $result = [];
+    try {
+      if (! empty($body['terms'])) {
+        foreach ($body['terms'] as $termInfo) {
+          $term = \Drupal\taxonomy\Entity\Term::create($termInfo);
+          $term->save();
+          $result[$term->id()] = $termInfo;
+        }
+      } else {
+        throw new \Exception('terms manquant');
+      }
+    } catch (\Exception $e) {
+      return $this->reponse($e->getTrace(), 403, $e->getMessage());
+    }
+    return $this->reponse($result, 200, 'Supresion des terms ok');
+  }
+
   /**
    *
    * @param array|string $configs

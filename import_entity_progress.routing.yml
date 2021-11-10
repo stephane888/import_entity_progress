@@ -14,6 +14,14 @@ import_entity_progress.deleteterms:
   requirements:
     _permission: 'access content'
 
+import_entity_progress.createterms:
+  path: '/import-entity-progress/createterms'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\import_entity_progress\Controller\ImportEntityProgressController::createterms'
+  requirements:
+    _permission: 'access content'
+
 import_entity_progress.settings_form:
   path: '/admin/config/system/import-entity-progress'
   defaults:
